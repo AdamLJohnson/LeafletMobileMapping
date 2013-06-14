@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.phonegap.example"
+    versionCode="10"
+    version   = "1.0.0">
+
+  <!-- versionCode is optional and Android only -->
+
+  <name>Leaflet Mobile Mapping App</name>
+
+  <description>
+    This is a test app to see how far I can take mapping with leaflet 
+  </description>
+
+  <author href="https://www.gnomon.com" email="ajohnson@gnomon.com">
+    Adam Johnson
+  </author>
+
+</widget>
