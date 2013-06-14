@@ -96,10 +96,10 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="css\images\layers.png" />
-    <Content Include="css\images\marker-icon%402x.png" />
-    <Content Include="css\images\marker-icon.png" />
-    <Content Include="css\images\marker-shadow.png" />
+    <Content Include="Scripts\images\layers.png" />
+    <Content Include="Scripts\images\marker-icon%402x.png" />
+    <Content Include="Scripts\images\marker-icon.png" />
+    <Content Include="Scripts\images\marker-shadow.png" />
     <Content Include="css\leaflet.css" />
     <Content Include="css\leaflet.ie.css" />
     <Content Include="Scripts\bootstrap.js" />
