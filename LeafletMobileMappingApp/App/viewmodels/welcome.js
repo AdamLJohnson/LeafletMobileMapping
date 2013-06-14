@@ -20,6 +20,8 @@
             maxZoom: 18,
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://cloudmade.com">CloudMade</a>'
         }).addTo(map);
+        map.setView([38.5816, -121.4944], 16);
+        //map.setView([38.677959, -121.176058], 16);
 
         function onLocationFound(e) {
             var radius = e.accuracy / 2;
