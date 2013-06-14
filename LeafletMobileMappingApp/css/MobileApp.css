@@ -23,8 +23,16 @@ body {
     margin: 0;
 }
 
-html, body, #map, #applicationHost, #applicationHost > div {
+html, body, #applicationHost, #applicationHost > div {
     height: 100%;
+}
+
+#map {
+    position: absolute;
+    bottom: 44px;
+    right: 0px;
+    left: 0px;
+    top: 0px;
 }
 
 .appContainer {
