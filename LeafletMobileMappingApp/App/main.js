@@ -11,7 +11,7 @@ define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plu
         system.debug(true);
         //>>excludeEnd("build");
 
-        app.title = 'Durandal Starter Kit';
+        app.title = 'Rad Stuff';
         app.start().then(function() {
             //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
             //Look for partial views in a 'views' folder in the root.
@@ -20,7 +20,6 @@ define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plu
             //configure routing
             router.useConvention();
             router.mapNav('welcome');
-            router.mapNav('flickr');
             router.mapNav('test');
 
             //app.adaptToDevice();
