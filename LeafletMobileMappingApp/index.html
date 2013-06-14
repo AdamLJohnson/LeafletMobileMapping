@@ -8,7 +8,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="apple-touch-startup-image" href="~/Content/images/ios-startup-image-landscape.png" media="(orientation:landscape)" />
     <link rel="apple-touch-startup-image" href="~/Content/images/ios-startup-image-portrait.png" media="(orientation:portrait)" />
@@ -19,7 +20,9 @@
     <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/durandal.css" rel="stylesheet" />
+    <link href="css/leaflet.css" rel="stylesheet" />    
     <link href="Content/app.css" rel="stylesheet" />
+    <link href="css/MobileApp.css" rel="stylesheet" />
 
     <script type="text/javascript">
         if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -44,7 +47,8 @@
     <script src="Scripts/knockout-2.2.1.js"></script>
     <script src="Scripts/sammy-0.7.4.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="phonegap.js"></script>
+    <script src="Scripts/leaflet.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>    
 
     <script type="text/javascript" src="App/durandal/amd/require.js" data-main="App/main"></script>
     <!--<script type="text/javascript" src="~/App/main-built.js"></script>-->

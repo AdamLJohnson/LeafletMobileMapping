@@ -1,25 +1,42 @@
 ﻿define(function() {
-    var welcome = function () {
-        this.displayName = 'Welcome to the Durandal Starter Kit!';
-        this.description = 'Durandal is a cross-device, cross-platform client framework written in JavaScript and designed to make Single Page Applications (SPAs) easy to create and maintain.';
-        this.features = [
-            'Clean MV* Architecture',
-            'JS & HTML Modularity',
-            'Simple App Lifecycle',
-            'Eventing, Modals, Message Boxes, etc.',
-            'Navigation & Screen State Management',
-            'Consistent Async Programming w/ Promises',
-            'App Bundling and Optimization',
-            'Use any Backend Technology',
-            'Built on top of jQuery, Knockout & RequireJS',
-            'Integrates with other libraries such as SammyJS & Bootstrap',
-            'Make jQuery & Bootstrap widgets templatable and bindable (or build your own widgets).'
-        ];
+    var vm = {
+        viewAttached: viewAttached,
+        activate: activate
     };
+    return vm;
 
-    welcome.prototype.viewAttached = function (view) {
-        //you can get the view after it's bound and connected to it's parent dom node if you want
-    };
+    function activate(context) {
+    }
 
-    return welcome;
+    function viewAttached(view) {
+        //var map = L.map('map').setView([51.505, -0.09], 13);
+        //L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+        //    maxZoom: 18,
+        //    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+        //}).addTo(map);
+        var map = L.map('map');
+
+        L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://cloudmade.com">CloudMade</a>'
+        }).addTo(map);
+
+        function onLocationFound(e) {
+            var radius = e.accuracy / 2;
+
+            L.marker(e.latlng).addTo(map)
+				.bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+            L.circle(e.latlng, radius).addTo(map);
+        }
+
+        function onLocationError(e) {
+            alert(e.message);
+        }
+
+        map.on('locationfound', onLocationFound);
+        map.on('locationerror', onLocationError);
+
+        map.locate({ setView: true, maxZoom: 16 });
+    }
 });
