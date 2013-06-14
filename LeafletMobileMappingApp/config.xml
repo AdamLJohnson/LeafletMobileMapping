@@ -16,5 +16,7 @@
   <author href="https://www.gnomon.com" email="ajohnson@gnomon.com">
     Adam Johnson
   </author>
-
+  
+  <access origin="*" />
+  
 </widget>
