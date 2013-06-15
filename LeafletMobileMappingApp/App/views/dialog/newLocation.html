@@ -1,0 +1,22 @@
+﻿<div class="messageBox editForm clientNote" data-bind="with: entity">
+    <div class="modal-header">
+        <h4>Client Note</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row-fluid">
+            Status:
+            <select data-bind="value: status">
+                <option value="R">Recorded</option>
+                <option value="DNR">Does not need to be recorded</option>
+                <option value="NTBR">Did not Record but should be</option>
+            </select>
+        </div>
+        <div class="row-fluid">
+            Notes:
+            <input type="text" data-bind="value: note" placeholder="Notes" />
+        </div>
+    </div>
+    <div class="modal-footer" data-bind="foreach: $parent.options.slice(0).reverse()">
+        <button class="btn" data-bind="click: function () { $root.selectOption($data); }, html: $data, css: { 'btn-primary': $index() == $root.options.length - 1, autofocus: $index() == $root.options.length - 1 }"></button>
+    </div>
+</div>

@@ -63,11 +63,13 @@
     <Content Include="App\durandal\widget.js" />
     <Content Include="App\main-built.js" />
     <Content Include="App\main.js" />
+    <Content Include="App\viewmodels\dialog\newLocation.js" />
     <Content Include="App\viewmodels\flickr.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\viewmodels\test.js" />
     <Content Include="App\viewmodels\welcome.js" />
     <Content Include="App\views\detail.html" />
+    <Content Include="App\views\dialog\newLocation.html" />
     <Content Include="App\views\flickr.html" />
     <Content Include="App\views\test.html" />
     <Content Include="App\views\shell.html" />

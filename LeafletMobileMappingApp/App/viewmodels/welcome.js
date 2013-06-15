@@ -1,10 +1,15 @@
 ﻿define(function () {
     var map = null;
+    var locationList = ko.observableArray();
+    var durandalApp = require('durandal/app');
+
     var vm = {
         viewAttached: viewAttached,
         activate: activate,
         centerOnLocation: centerOnLocation,
-        isLocating: ko.observable(false)
+        isLocating: ko.observable(false),
+        createNewLocation: createNewLocation,
+        locationList: locationList
     };
     return vm;
 
@@ -43,6 +48,35 @@
             alert(e.message);
         });
 
-        map.locate({ setView: true, maxZoom: 16 });
+        map.locate({ setView: true, maxZoom: 16 });                
     }
+
+    function location() {
+        var self = this;
+        self.lat = ko.observable(null);
+        self.lon = ko.observable(null);
+        self.title = ko.observable(null);
+        self.status = ko.observable(null);
+        self.note = ko.observable(null);
+        self.accuracy = ko.observable(null);
+    }
+
+    function createNewLocation() {
+        var newLocation = new location();
+
+        navigator.geolocation.getCurrentPosition(function (position) {
+            newLocation.lat(position.coords.latitude);
+            newLocation.lon(position.coords.longitude);
+            newLocation.accuracy(position.coords.accuracy);
+        }, function (error) {
+
+        }, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+
+        durandalApp.showModal('viewmodels/dialog/newLocation', {entity: newLocation}).then(function (results) {
+            if (results === true) {
+                alert(ko.toJSON(newLocation));
+            }
+        });
+    }
+
 });
